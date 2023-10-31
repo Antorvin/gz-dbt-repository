@@ -14,7 +14,15 @@ models:
     description: find unique key
     tests:
       - unique:
-          column_name: product_id
+          column_name: products_id
   - name: stg_gz_raw_data__raw_gz_ship_copy
-    description: unique key
-      
+    description: find unique key
+    tests:
+      - unique:
+          column_name: orders_id
+  - name: stg_gz_raw_data__raw_gz_sales_copy
+    description: find unique key
+    tests:
+      - unique:
+          column_name: "(orders_id || '_' || product_id)"   
+    
