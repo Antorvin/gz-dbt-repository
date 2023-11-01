@@ -1,5 +1,6 @@
 version: 2
 sources:
+  
   - name: gz_raw_data
     tables:
       - name: raw_gz_product_copy
@@ -12,6 +13,7 @@ sources:
 models: 
   - name: stg_gz_raw_data__raw_gz_product_copy
     description: find unique key
+
     tests:
       - unique:
           column_name: products_id
@@ -24,5 +26,10 @@ models:
     description: find unique key
     tests:
       - unique:
-          column_name: "(orders_id || '_' || product_id)"   
+          column_name: "(orders_id || '_' || product_id)" 
+  - name: finance_days
+    description: Data analisys for finance team
+
+
+
     
